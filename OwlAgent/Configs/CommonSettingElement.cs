@@ -11,6 +11,13 @@ namespace OwlAgent.Configs
             set { base["CounterIntervalRead"] = value; }
         }
 
+        [ConfigurationProperty("FileIntervalWrite", DefaultValue = 5, IsKey = false, IsRequired = true)]
+        public int FileIntervalWrite
+        {
+            get { return ((int)(base["FileIntervalWrite"])); }
+            set { base["FileIntervalWrite"] = value; }
+        }
+
         [ConfigurationProperty("SendIntervalData", DefaultValue = 5, IsKey = false, IsRequired = true)]
         public int SendIntervalData
         {

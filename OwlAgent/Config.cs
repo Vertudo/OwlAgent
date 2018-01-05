@@ -52,6 +52,7 @@ namespace OwlAgent
                 {
                     CommonSettingElement commonSettings = section.CommonSettings[0];
                     counterIntervalRead = commonSettings.CounterIntervalRead;
+                    fileIntervalWrite = commonSettings.FileIntervalWrite;
                     sendIntervalData = commonSettings.SendIntervalData;
                 }
             }

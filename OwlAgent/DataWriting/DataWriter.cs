@@ -103,11 +103,18 @@ namespace OwlAgent.DataWriting
             {
                 if (nextCreateNewFile != default(DateTime))
                 {
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+
                     using (StreamReader reader = File.OpenText(currentDataFile))
                     {
                         string line;
-                        while
+                        while ((line = reader.ReadLine()) != null)
+                        {
+                            LogData data = serializer.Deserialize<LogData>(line);
+                        }
+                        reader.Close();                        
                     }
+                    File.Delete(currentDataFile);
                 }
                 nextCreateNewFile = localData.AddSeconds(fileIntervalCreateNew);
                 currentDataFile = pathToLogsDirectory + "\\datafile_" + nextCreateNewFile.ToString("ddMMyyyyHmmss") + ".data";
