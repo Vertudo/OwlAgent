@@ -19,5 +19,14 @@ namespace OwlAgent
         {
             Program.Stop();
         }
+
+        private void InitializeComponent()
+        {
+            // 
+            // Service
+            // 
+            this.ServiceName = "OwlAgent";
+
+        }
     }
 }
